@@ -45,11 +45,16 @@ class _OnBoardingViewsBodyState extends State<OnBoardingViewsBody> {
         ),
         DotsIndicator(
           dotsCount: 3,
+          position: currentPage,
           decorator: DotsDecorator(
             activeColor: kPrimaryColor,
-            color: currentPage == 1 || currentPage == 2
-                ? kPrimaryColor
-                : kPrimaryColor.withValues(alpha: 0.5),
+            color: Colors.grey.withValues(alpha: 0.3),
+            spacing: const EdgeInsets.all(8.0),
+            size: const Size(9.0, 9.0),
+            activeSize: const Size(12.0, 12.0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.0),
+            ),
           ),
         ),
         const SizedBox(
