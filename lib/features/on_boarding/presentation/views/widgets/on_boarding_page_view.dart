@@ -1,16 +1,18 @@
-import 'package:e_commerce/constant.dart';
+import 'package:e_commerce/core/utils/app_color.dart';
 import 'package:e_commerce/core/utils/app_images.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/widgets/page_view_item.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPageView extends StatelessWidget {
-  const OnBoardingPageView({super.key});
-
+  const OnBoardingPageView({super.key, required this.pageController});
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return PageView(
+      controller: pageController,
       children: const [
         PageViewItem(
+          isVisiable: true,
           image: 'assets/images/one.png',
           backgroundImage: Assets.assetsImagesBackgroundImage,
           subtitle:
@@ -33,6 +35,7 @@ class OnBoardingPageView extends StatelessWidget {
           ),
         ),
         PageViewItem(
+          isVisiable: true,
           image: 'assets/images/two.png',
           backgroundImage: Assets.assetsImagesBackgroundImage,
           subtitle:
@@ -48,6 +51,7 @@ class OnBoardingPageView extends StatelessWidget {
           ),
         ),
         PageViewItem(
+          isVisiable: false,
           image: 'assets/images/three.png',
           backgroundImage: Assets.assetsImagesBackgroundImage,
           subtitle:

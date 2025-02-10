@@ -7,10 +7,12 @@ class PageViewItem extends StatelessWidget {
       required this.image,
       required this.backgroundImage,
       required this.subtitle,
-      required this.title});
+      required this.title,
+      required this.isVisiable});
   final String image, backgroundImage;
   final String subtitle;
   final Widget title;
+  final bool isVisiable;
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +35,15 @@ class PageViewItem extends StatelessWidget {
                 right: 0,
                 child: Image.asset(image),
               ),
-              const Positioned(
-                right: 20,
-                top: 20,
-                child: Text(
-                  'Skip',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+              Visibility(
+                visible: isVisiable,
+                child: const Positioned(
+                  right: 20,
+                  top: 20,
+                  child: Text(
+                    'Skip',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
                 ),
               )
             ],
