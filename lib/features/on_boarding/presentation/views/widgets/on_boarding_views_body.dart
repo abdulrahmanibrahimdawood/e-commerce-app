@@ -49,7 +49,7 @@ class _OnBoardingViewsBodyState extends State<OnBoardingViewsBody> {
           decorator: DotsDecorator(
             activeColor: kPrimaryColor,
             color: kPrimaryColor.withValues(alpha: 0.5),
-            spacing: const EdgeInsets.all(8.0),
+            spacing: const EdgeInsets.all(5.0),
             size: const Size(9.0, 9.0),
             activeSize: const Size(18.0, 9.0),
             activeShape: RoundedRectangleBorder(
