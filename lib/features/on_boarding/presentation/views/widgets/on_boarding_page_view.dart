@@ -29,7 +29,7 @@ class OnBoardingPageView extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: kPrimaryColor),
+                    color: AppColor.kPrimaryColor),
               )
             ],
           ),

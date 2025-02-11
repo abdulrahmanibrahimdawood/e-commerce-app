@@ -1,3 +1,6 @@
+import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/core/services/shared_preferences_singleton.dart';
+import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -37,15 +40,25 @@ class PageViewItem extends StatelessWidget {
               ),
               Visibility(
                 visible: isVisiable,
-                child: const Positioned(
-                  right: 20,
-                  top: 20,
-                  child: Text(
-                    'Skip',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: GestureDetector(
+                      onTap: () {
+                        SharedPrefs.setBool(kIsOnboardingViewSeen, true);
+
+                        Navigator.of(context)
+                            .pushReplacementNamed(LoginView.routeName);
+                      },
+                      child: const Text(
+                        'Skip',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
