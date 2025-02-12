@@ -16,6 +16,10 @@ class LoginViewBody extends StatelessWidget {
               height: 24,
             ),
             CustomTextFormFeild(
+              icon: Icon(
+                Icons.email,
+                color: Colors.blueGrey,
+              ),
               textInputType: TextInputType.emailAddress,
               hintText: 'Email',
             ),
@@ -23,7 +27,8 @@ class LoginViewBody extends StatelessWidget {
               height: 16,
             ),
             CustomTextFormFeild(
-              icon: Icon(Icons.remove_red_eye_outlined),
+              suffixIcon: Icon(Icons.remove_red_eye, color: Colors.blueGrey),
+              icon: Icon(Icons.lock, color: Colors.blueGrey),
               textInputType: TextInputType.visiblePassword,
               hintText: 'Password',
             )

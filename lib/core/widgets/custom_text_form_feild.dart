@@ -6,19 +6,24 @@ class CustomTextFormFeild extends StatelessWidget {
       {super.key,
       required this.hintText,
       required this.textInputType,
-      this.icon});
+      this.icon,
+      this.suffixIcon});
   final String hintText;
   final TextInputType textInputType;
+  final Widget? suffixIcon;
   final Widget? icon;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textAlignVertical: TextAlignVertical.center,
+      textAlign: TextAlign.end,
       keyboardType: textInputType,
       decoration: InputDecoration(
         suffixIcon: icon,
+        prefixIcon: suffixIcon,
         hintText: hintText,
-        hintStyle: const TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 16, color: Colors.blueGrey),
+        hintStyle: const TextStyle(fontSize: 16, color: Colors.blueGrey),
         filled: true,
         fillColor: AppColor.kPrimaryColor.withValues(alpha: 0.1),
         border: buildOutlineInputBorder(),
@@ -33,7 +38,7 @@ class CustomTextFormFeild extends StatelessWidget {
       borderRadius: BorderRadius.circular(4.0),
       borderSide: const BorderSide(
         width: 1,
-        color: Color(0xffE6E9E9),
+        color: Colors.grey,
       ),
     );
   }
