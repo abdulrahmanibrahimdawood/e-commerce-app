@@ -10,6 +10,7 @@ class SocialLoginButton extends StatelessWidget {
   final String icon;
   final String title;
   final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,25 +23,26 @@ class SocialLoginButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(16)),
         ),
         onPressed: onPressed,
-        child: ListTile(
-          visualDensity: const VisualDensity(
-              horizontal: VisualDensity.minimumDensity,
-              vertical: VisualDensity.minimumDensity),
-          leading: SvgPicture.asset(icon),
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  color: Color(0xFF0C0D0D),
-                  fontSize: 18,
-                  fontFamily: 'Cairo',
-                  fontWeight: FontWeight.w600,
-                ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: SvgPicture.asset(icon),
               ),
-            ],
-          ),
+            ),
+            Text(
+              title,
+              style: const TextStyle(
+                color: Color(0xFF0C0D0D),
+                fontSize: 18,
+                fontFamily: 'Cairo',
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
         ),
       ),
     );
