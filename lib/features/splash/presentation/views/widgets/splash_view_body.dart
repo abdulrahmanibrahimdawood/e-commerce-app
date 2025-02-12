@@ -31,6 +31,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(
       const Duration(seconds: 1),
       () {
+        //================================= ازاله الورنينج =======================================
+        if (!mounted) return; // تحقق أن الودجت ما زال في الشجرة
+        //====================================================================================
         if (isOnboardingViewSeen) {
           Navigator.pushReplacementNamed(context, LoginView.routeName);
         } else {
