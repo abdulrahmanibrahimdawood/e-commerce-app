@@ -16,8 +16,11 @@ class HebatoDiagnosis extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      localizationsDelegates: [
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Cairo',
+      ),
+      localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

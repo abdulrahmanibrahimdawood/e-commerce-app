@@ -5,7 +5,10 @@ AppBar buildAppBar(context, {required String title}) {
     centerTitle: true,
     title: Text(
       title,
-      style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      style: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Cairo'),
     ),
     leading: GestureDetector(
       onTap: () {
