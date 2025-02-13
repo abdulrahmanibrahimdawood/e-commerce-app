@@ -11,7 +11,7 @@ class LoginView extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        resizeToAvoidBottomInset: true,
+        // resizeToAvoidBottomInset: true,
         appBar: buildAppBar(context, title: 'Login'),
         body: const LoginViewBody(),
       ),
